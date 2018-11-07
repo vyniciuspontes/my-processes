@@ -9,7 +9,7 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_DwlkZuKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_DwlkZ-KNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_DwlkaOKNEeiKNIxk9EFiNg" name="Step1" incoming="_DwlkguKNEeiKNIxk9EFiNg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_DwlkaOKNEeiKNIxk9EFiNg" name="My Process" outgoing="_Q2Ok8OKNEeiKNIxk9EFiNg" incoming="_DwlkguKNEeiKNIxk9EFiNg" overrideActorsOfTheLane="false">
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_DwlkaeKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_DwlkauKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Dwlka-KNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
@@ -26,6 +26,12 @@
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_DwlkduKNEeiKNIxk9EFiNg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_Dwlkd-KNEeiKNIxk9EFiNg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndEvent" xmi:id="_Q1xR8OKNEeiKNIxk9EFiNg" name="End1" incoming="_Q2Ok8OKNEeiKNIxk9EFiNg">
+          <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_Q1x5AOKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Q1xR8uKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Q1xR8eKNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_Q1xR8-KNEeiKNIxk9EFiNg" name="" content="" returnTypeFixed="true"/>
         </elements>
       </elements>
       <resourceFolders xmi:type="process:ResourceFolder" xmi:id="_DzSTEOKNEeiKNIxk9EFiNg" path="_DwlkYeKNEeiKNIxk9EFiNg/application/application"/>
@@ -49,6 +55,10 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_DwlkguKNEeiKNIxk9EFiNg" target="_DwlkaOKNEeiKNIxk9EFiNg" source="_DwlkY-KNEeiKNIxk9EFiNg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Dwlkg-KNEeiKNIxk9EFiNg"/>
         <condition xmi:type="expression:Expression" xmi:id="_DwlkhOKNEeiKNIxk9EFiNg" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_Q2Ok8OKNEeiKNIxk9EFiNg" target="_Q1xR8OKNEeiKNIxk9EFiNg" source="_DwlkaOKNEeiKNIxk9EFiNg">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Q2PMAOKNEeiKNIxk9EFiNg"/>
+        <condition xmi:type="expression:Expression" xmi:id="_Q2PMAeKNEeiKNIxk9EFiNg" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_DwlkheKNEeiKNIxk9EFiNg" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
       <contract xmi:type="process:Contract" xmi:id="_DwlkhuKNEeiKNIxk9EFiNg"/>
@@ -100,6 +110,12 @@
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DwmLjeKNEeiKNIxk9EFiNg" x="60" y="68"/>
             </children>
+            <children xmi:type="notation:Shape" xmi:id="_Q1zuMOKNEeiKNIxk9EFiNg" type="3003" element="_Q1xR8OKNEeiKNIxk9EFiNg" fontName="Ubuntu">
+              <children xmi:type="notation:DecorationNode" xmi:id="_Q10VQOKNEeiKNIxk9EFiNg" type="5025">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Q10VQeKNEeiKNIxk9EFiNg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q1zuMeKNEeiKNIxk9EFiNg" x="385" y="70"/>
+            </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_DwmLjuKNEeiKNIxk9EFiNg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_DwmLj-KNEeiKNIxk9EFiNg" fontName="Ubuntu"/>
@@ -121,6 +137,13 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_DwmLnOKNEeiKNIxk9EFiNg" fontName="Ubuntu"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DwmLneKNEeiKNIxk9EFiNg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_Q2RoQOKNEeiKNIxk9EFiNg" type="4001" element="_Q2Ok8OKNEeiKNIxk9EFiNg" source="_DwmLh-KNEeiKNIxk9EFiNg" target="_Q1zuMOKNEeiKNIxk9EFiNg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Q2SPUOKNEeiKNIxk9EFiNg" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Q2SPUeKNEeiKNIxk9EFiNg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Q2RoQeKNEeiKNIxk9EFiNg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Q2RoQuKNEeiKNIxk9EFiNg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
