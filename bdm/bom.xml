@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel modelVersion="1.0" productVersion="7.7.4">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.product">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="price" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.purchaseOrder">
+            <fields>
+                <field type="DOUBLE" length="255" name="total" nullable="true" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="shippedDate" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="status" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.orderItem" fetchType="LAZY" name="orderItem" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.orderItem">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.product" fetchType="LAZY" name="product" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="quantity" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
